@@ -1,3 +1,5 @@
-export function helloAnything(thing: string): string {
-    return `Hello ${thing}!`
+import Table from "./components/Table"
+
+export function Component() {
+  return Table
 }

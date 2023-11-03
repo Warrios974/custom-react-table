@@ -1,5 +1,1 @@
-import Table from "./components/Table"
-
-export function Component() {
-  return Table
-}
+export { Table } from "./components/Table"

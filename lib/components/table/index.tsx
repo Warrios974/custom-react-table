@@ -3,7 +3,7 @@ import styles from './styles.module.css'
 
 type TableTypes = React.TableHTMLAttributes<HTMLTableElement>
 
-export default function Table(props: TableTypes) {
+export function Table(props: TableTypes) {
 
     const { className, ...restProps } = props
     

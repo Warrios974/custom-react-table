@@ -2,6 +2,7 @@ import styles from './styles.module.css'
 import { TableProps } from '../../types'
 import { TableHeader } from '../TableHeader';
 import TableHeaderRow from '../TableHeaderRow';
+import TableRow from '../TableRow';
 
 export function Table<T>(props: TableProps<T>) {
 
@@ -32,6 +33,10 @@ export function Table<T>(props: TableProps<T>) {
                 className={`${styles.table} ${classNameTable}`}
             >
                 <TableHeaderRow 
+                    columns={columns}
+                />
+                <TableRow 
+                    data={data}
                     columns={columns}
                 />
             

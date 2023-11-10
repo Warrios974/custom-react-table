@@ -1,6 +1,10 @@
-export type TableColumn  = {
+export type Primitive = string | number | boolean
+export type Selector<T> = (row: T, rowIndex?: number) => Primitive
+
+export type TableColumn<T>  = {
     name: string,
-    selector: true
+    selector: Selector<T>,
+    sortable?: boolean,
 }[]
 
 export type TableProps<T> = {
@@ -14,7 +18,7 @@ export type TableProps<T> = {
     diplayEntries?: boolean,
     diplayFooterRow?: boolean,
 
-    columns: TableColumn,
+    columns: TableColumn<T>,
     data: T[]
 }
 
@@ -26,6 +30,11 @@ export type TableHeaderProps = {
     diplayEntries?: boolean,
 }
 
-export type TableHeaderRowProps = {
-    columns: TableColumn
+export type TableHeaderRowProps<T> = {
+    columns: TableColumn<T>,
+}
+
+export type TableRowProps<T> = {
+    data: T[]
+    columns: TableColumn<T>,
 }

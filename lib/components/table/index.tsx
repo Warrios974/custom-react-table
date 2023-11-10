@@ -1,20 +1,41 @@
-import React from 'react'
 import styles from './styles.module.css'
+import { TableProps } from '../../types'
+import { TableHeader } from '../TableHeader';
+import TableHeaderRow from '../TableHeaderRow';
 
-type TableTypes = React.TableHTMLAttributes<HTMLTableElement>
+export function Table<T>(props: TableProps<T>) {
 
-export function Table(props: TableTypes) {
+    const { title,
+        className,
+        classNameTable,
+        classNameHeader,
+        displaySearchBar,
+        diplayEntries,
+        classNameInput,
+        columns,
+        data} = props
 
-    const { className, ...restProps } = props
+        console.log(columns);
+        console.log(data);
+    
     
     return (
-        <table
-            className={`${styles.table} ${className}`}
-            {...restProps}
-        >
+        <div className={`${className && className}`}>
+            <TableHeader 
+                title={title}
+                className={classNameHeader}
+                classNameInput={classNameInput}
+                displaySearchBar={displaySearchBar}
+                diplayEntries={diplayEntries}
+            />
+            <table
+                className={`${styles.table} ${classNameTable}`}
+            >
+                <TableHeaderRow 
+                    columns={columns}
+                />
             
-            Table
-        
-        </table>
+            </table>
+        </div>
     )
 }

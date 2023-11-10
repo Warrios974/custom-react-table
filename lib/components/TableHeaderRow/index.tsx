@@ -1,9 +1,10 @@
 import { TableHeaderRowProps } from "../../types"
 
 
-export default function TableHeaderRow({ columns }: TableHeaderRowProps) {
+export default function TableHeaderRow<T>({ columns }: TableHeaderRowProps<T>) {
   return (
     <thead>
+      <tr>
       {
         columns.map((column, index) => (
           <th 
@@ -13,6 +14,7 @@ export default function TableHeaderRow({ columns }: TableHeaderRowProps) {
           </th>
         ))
       }
+      </tr>
     </thead>
   )
 }

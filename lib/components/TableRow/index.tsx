@@ -1,10 +1,17 @@
-import { TableRowProps } from "../../types"
+import { useContext } from "react"
+import { TableContext } from "../../contexts/TableContext"
+import { sliceDataPage } from "../../reducer/tableReducer"
 
-export default function TableRow<T>({ data, columns }: TableRowProps<T>) {
+export default function TableRow() {
+    
+    const { columns, dataFiltered, numberOfEntriesPerPage, currentPage } = useContext(TableContext)
+
+    const currentDataPage = sliceDataPage(dataFiltered, numberOfEntriesPerPage, currentPage)
+
     return (
       <tbody>
         { 
-            data.map((data, index) => (
+            currentDataPage?.map((data, index) => (
                 <tr
                     key={`${index}`}
                 >

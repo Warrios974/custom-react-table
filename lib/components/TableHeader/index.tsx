@@ -1,21 +1,22 @@
 import styles from './styles.module.css'
-import { TableHeaderProps } from '../../types'
 import { SearchForm } from '../SearchForm'
 import { SelectEntries } from '../SelectEntries'
+import { useContext } from 'react'
+import { TableContext } from '../../contexts/TableContext'
 
-export function TableHeader(props: TableHeaderProps) {
+export function TableHeader() {
 
-    const { title, className, displaySearchBar, diplayEntries } = props
-    
+    const data = useContext(TableContext)
+
     return (
         <div
-            className={`${styles.header} ${className && className}`}
+            className={`${styles.header} ${data.classNameHeader && data.classNameHeader}`}
         >
-            <h2>{title}</h2>
+            <h2>{data.title}</h2>
 
-            <div>
-                {diplayEntries && <SelectEntries />}
-                {displaySearchBar && <SearchForm />}
+            <div className={`${styles.filters}`}>
+                {data.diplayEntries && <SelectEntries />}
+                {data.displaySearchBar && <SearchForm />}
             </div>
         
         </div>

@@ -1,8 +1,4 @@
-.header{
-    width: 100%;
-}
-
-.filters{
+.footer {
     width: 100%;
     display: flex;
     justify-content: space-between;

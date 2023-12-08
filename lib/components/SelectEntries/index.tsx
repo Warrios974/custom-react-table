@@ -1,13 +1,20 @@
+import { useContext } from "react";
+import { TableContext } from "../../contexts/TableContext";
+
 export function SelectEntries() {
+
+  const { listOfNumbersOfEntries, handleChangeNumberEntries } = useContext(TableContext);
+
+  const handleChange = (entries : number) => {
+    handleChangeNumberEntries && handleChangeNumberEntries(entries)
+  }
+
   return (
     <form>
         <label htmlFor="selectEntries">
             Show 
-            <select name="select" id="selectEntries">
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
+            <select name="select" id="selectEntries" onChange={(e) => handleChange(Number(e.target.value))}>
+                {listOfNumbersOfEntries?.map((item) => <option key={`${item}`} value={item}>{item}</option>)}
             </select>
              entries
         </label>

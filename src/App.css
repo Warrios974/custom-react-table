@@ -40,3 +40,134 @@
 .read-the-docs {
   color: #888;
 }
+
+.btnNumber{
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857;
+  margin-bottom: 0;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btnNumber:hover{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btnNumber:active{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btnNumber:focus{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btnNumber:visited{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btnNumber:disabled{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btnNextAndPrevious{
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857;
+  margin-bottom: 0;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btnNextAndPrevious:hover{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btnNextAndPrevious:active{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btnNextAndPrevious:focus{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btnNextAndPrevious:visited{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btnNextAndPrevious:disabled{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.input{
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857;
+  margin-bottom: 0;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.input:hover{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.input:active{
+  background-color: #eee;
+  border-color: #ddd;
+  color: #333;
+}
+
+.tableTh{
+  background-color: #faad81;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -4,7 +4,7 @@ import { TableContext } from '../../contexts/TableContext';
 
 export  function SearchForm() {
 
-  const { handleSearchByKeyword } = useContext(TableContext);
+  const { handleSearchByKeyword, classNameInput } = useContext(TableContext);
 
   const handleSearch = (keyword: string) => {
     handleSearchByKeyword && handleSearchByKeyword(keyword);
@@ -15,7 +15,7 @@ export  function SearchForm() {
       className={styles.form}
     >
       <label htmlFor="searchForm">Search</label>
-      <input type="text" id="searchForm" onChange={(e) => handleSearch(e.target.value)} />
+      <input type="text" id="searchForm" onChange={(e) => handleSearch(e.target.value)} className={`${classNameInput}`} />
     </form>
   )
 

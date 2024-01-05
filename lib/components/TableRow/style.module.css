@@ -1,0 +1,13 @@
+.td{
+    padding: .5rem 0;
+}
+
+.background{
+    background-color: #f6f6f6;
+}
+
+.tr:hover{
+    background-color: #d2d2d2;
+}
+
+/* Path: custom-react-table/lib/components/TableHeaderRow/styles.module.css */

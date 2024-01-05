@@ -3,30 +3,19 @@ import { Action, TableContextProviderProps, TableData } from "../types";
 
 const sortDataColumns = (data : TableData[], column: string, sort: string) => {
     
+    if(sort === '') return data
+
     const sortData = data.sort((a, b) => {
-
-        if(sort === 'ASC'){
-            if (a[column] < b[column]) {
-                return -1;
-            }
-            if (a[column] > b[column]) {
-                return 1;
-            }
-            return 0;
+        if (a[column] < b[column]) {
+            return -1;
         }
-
-        if(sort === 'DESC'){
-            if (a[column] > b[column]) {
-                return -1;
-            }
-            if (a[column] < b[column]) {
-                return 1;
-            }
-            return 0;
+        if (a[column] > b[column]) {
+            return 1;
         }
+        return 0;
     })
 
-    return sortData
+    return sort === 'ASC' ? sortData : sortData.reverse()
 }
 
 const filterbyKeyword = (data : TableData[], keyword: string) => {
@@ -54,38 +43,38 @@ export const sliceDataPage = (data: TableData[], numberOfEntriesPerPage: number,
 
 export function tableReducer(state: TableContextProviderProps, action: Action) {
     
-    const data = state.data
+    const data = JSON.parse(JSON.stringify(state.data))
 
     switch (action.type) {
-        case 'FILTER_BY_COLUMN':
+        case 'FILTER_BY_COLUMN': {
             return{
                 ...state,
-                dataFiltered: sortDataColumns(state.dataFiltered, action.payload? action.payload : 'firstName')
+                dataFiltered: sortDataColumns(data, action.payload.column? action.payload.column : 'firstName', action.payload.sort)
             }
-
+        }
         case 'SEARCH_BY_KEYWORD': {
             const keyword = filterbyKeyword(data, action.payload)
             return{
                 ...state,
-                dataFiltered: filterbyKeyword(data, action.payload),
-                numberOfPages: Math.ceil(filterbyKeyword(data, action.payload).length / state.numberOfEntriesPerPage),
-                numberOfEntries: filterbyKeyword(data, action.payload).length,
+                dataFiltered: keyword,
+                numberOfPages: Math.ceil(keyword.length / state.numberOfEntriesPerPage),
+                numberOfEntries: keyword.length,
             }
         }
-        case 'CHANGE_NUMBER_OF_ENTRIES':
+        case 'CHANGE_NUMBER_OF_ENTRIES': {
             return{
                 ...state,
                 numberOfEntriesPerPage: action.payload,
                 numberOfPages: Math.ceil(state.dataFiltered.length / action.payload),
                 currentPage: 1,
             }
-
-        case 'CHANGE_PAGE_OF_ENTRIES':
+        }
+        case 'CHANGE_PAGE_OF_ENTRIES': {
             return{
                 ...state,
                 currentPage: action.payload,
             }
-            
+        }    
         default:
             throw new Error();
     }

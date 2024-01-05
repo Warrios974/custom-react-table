@@ -16,10 +16,16 @@ export function Table(props: TableProps) {
         'className': props.className,
         'classNameTable': props.classNameTable,
         'classNameHeader': props.classNameHeader,
+        'classNameInput': props.classNameInput,
+        'classNamethHeader': props.classNamethHeader,
+        'classNamethFooter': props.classNamethFooter,
+        'classNametd': props.classNametd,
+        'classNameBtnNumber': props.classNameBtnNumber,
+        'classNameBtnNextAndPrevious': props.classNameBtnNextAndPrevious,
+        
         'displaySearchBar': props.displaySearchBar,
         'diplayEntries': props.diplayEntries,
         'diplayFooterRow': props.diplayFooterRow,
-        'classNameInput': props.classNameInput,
         'displayInfoEntries': props.displayInfoEntries,
         'listOfNumbersOfEntries': listOfNumbersOfEntries,
         'numberOfEntries': props.data.length,
@@ -28,10 +34,8 @@ export function Table(props: TableProps) {
         'numberOfPages': Math.ceil(props.data.length / listOfNumbersOfEntries[0] || 10),
         'numberOfEntriesPerPage': listOfNumbersOfEntries[0],
         'currentPage': 1,
-        'dataFiltered': props.data,
+        'dataFiltered': JSON.parse(JSON.stringify(props.data)),
     }
-
-    //https://stackoverflow.com/questions/42761068/paginate-javascript-array
 
     return (
         <TableContextProvider 

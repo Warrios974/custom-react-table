@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { TableContext } from "../../contexts/TableContext"
 import { sliceDataPage } from "../../reducer/tableReducer"
+import styles from './style.module.css'
 
 export default function TableRow() {
     
@@ -14,11 +15,13 @@ export default function TableRow() {
             currentDataPage?.map((data, index) => (
                 <tr
                     key={`${index}`}
+                    className={`${styles.tr} ${index % 2 === 0 && styles.background}`}
                 >
                 {
                 columns.map((column, index) => (
                     <td 
                         key={`${column.name}-${index}`}
+                        className={`${styles.td}`}
                     >
                     {column.selector(data)}
                     </td>

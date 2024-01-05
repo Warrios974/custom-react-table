@@ -22,6 +22,12 @@ export type TableProps = {
     classNameHeader?: string,
     classNameRow?: string,
     classNameInput?: string,
+    classNamethHeader?: string,
+    classNamethFooter?: string,
+    classNametd?: string,
+    classNameBtnNumber?: string,
+    classNameBtnNextAndPrevious?: string,
+
     displaySearchBar?: boolean,
     diplayEntries?: boolean,
     diplayFooterRow?: boolean,
@@ -67,6 +73,10 @@ export type TableRowProps = {
 
 export type InfosEntriesProps = {
     listOfNumbersOfEntries: number[]
+}
+
+export type TheadProps = {
+    column: TableColumn,
 }
 
 //context and reducer

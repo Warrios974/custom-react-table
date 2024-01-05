@@ -5,12 +5,15 @@ function App() {
 
   return (
       <Table 
-        title='Autre titre'
         displaySearchBar={true}
         diplayEntries={true}
         displayInfoEntries={true}
-        diplayFooterRow={true}
-        listOfNumbersOfEntries={[2, 3, 5, 50]}
+        diplayFooterRow={false}
+        listOfNumbersOfEntries={[2, 10, 25, 50]}
+        classNameBtnNextAndPrevious='btnNextAndPrevious'
+        classNameBtnNumber='btnNumber'
+        classNameInput='input'
+        classNamethHeader='tableTh'
         columns={[
           {
               name: 'First Name',
@@ -68,7 +71,7 @@ function App() {
               lastName: "Lauret",
               startDate: "10/04/2023",
               state:"AS",
-              street:"dede",
+              street:"Pierre",
               zipCode: "13245",
           },
           {
@@ -169,6 +172,90 @@ function App() {
           },
           {
               id: "10",
+              city: "dede",
+              dateOfBirth: "14/12/1997",
+              department: "RH",
+              firstName: "Kenny",
+              lastName: "Lauret",
+              startDate: "10/04/2023",
+              state:"AS",
+              street:"dede",
+              zipCode: "13245",
+          },
+          {
+              id: "11",
+              city: "dede",
+              dateOfBirth: "14/12/1997",
+              department: "RH",
+              firstName: "Kenny",
+              lastName: "Lauret",
+              startDate: "10/04/2023",
+              state:"AS",
+              street:"dede",
+              zipCode: "13245",
+          },
+          {
+              id: "12",
+              city: "dede",
+              dateOfBirth: "14/12/1997",
+              department: "RH",
+              firstName: "Kenny",
+              lastName: "Lauret",
+              startDate: "10/04/2023",
+              state:"AS",
+              street:"dede",
+              zipCode: "13245",
+          },
+          {
+              id: "13",
+              city: "dede",
+              dateOfBirth: "14/12/1997",
+              department: "RH",
+              firstName: "Kenny",
+              lastName: "Lauret",
+              startDate: "10/04/2023",
+              state:"AS",
+              street:"dede",
+              zipCode: "13245",
+          },
+          {
+              id: "14",
+              city: "dede",
+              dateOfBirth: "14/12/1997",
+              department: "RH",
+              firstName: "Kenny",
+              lastName: "Lauret",
+              startDate: "10/04/2023",
+              state:"AS",
+              street:"dede",
+              zipCode: "13245",
+          },
+          {
+              id: "15",
+              city: "dede",
+              dateOfBirth: "14/12/1997",
+              department: "RH",
+              firstName: "Kenny",
+              lastName: "Lauret",
+              startDate: "10/04/2023",
+              state:"AS",
+              street:"dede",
+              zipCode: "13245",
+          },
+          {
+              id: "16",
+              city: "dede",
+              dateOfBirth: "14/12/1997",
+              department: "RH",
+              firstName: "Kenny",
+              lastName: "Lauret",
+              startDate: "10/04/2023",
+              state:"AS",
+              street:"dede",
+              zipCode: "13245",
+          },
+          {
+              id: "16",
               city: "dede",
               dateOfBirth: "14/12/1997",
               department: "RH",

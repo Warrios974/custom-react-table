@@ -16,15 +16,15 @@
     "build": "tsc --p ./tsconfig-build.json && vite build",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@types/node": "^20.8.10",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -34,7 +34,11 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-storybook": "^0.6.15",
     "glob": "^10.3.10",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.6.3",

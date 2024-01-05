@@ -1,4 +1,4 @@
-import { Action, TableContextProviderProps, TableData } from "../types";
+import { Action, TableColumn, TableContextProviderProps, TableData } from "../types";
 
 
 const sortDataColumns = (data : TableData[], column: string, sort: string) => {
@@ -18,22 +18,25 @@ const sortDataColumns = (data : TableData[], column: string, sort: string) => {
     return sort === 'ASC' ? sortData : sortData.reverse()
 }
 
-const filterbyKeyword = (data : TableData[], keyword: string) => {
-    const sortData = data.filter((item) => {
-       return item.firstName.toLowerCase().includes(keyword.toLowerCase()) || 
-       item.lastName.toLowerCase().includes(keyword.toLowerCase()) || 
-       item.department.toLowerCase().includes(keyword.toLowerCase()) || 
-       item.city.toLowerCase().includes(keyword.toLowerCase()) || 
-       item.state.toLowerCase().includes(keyword.toLowerCase()) || 
-       item.zipCode.toLowerCase().includes(keyword.toLowerCase()) || 
-       item.street.toLowerCase().includes(keyword.toLowerCase()) || 
-       item.dateOfBirth.toLowerCase().includes(keyword.toLowerCase()) || 
-       item.startDate.toLowerCase().includes(keyword.toLowerCase()) 
-    })
+const filterbyKeyword = (data : TableData[], keyword: string, columns: TableColumn[]) => {
 
     if(keyword === '') return data
 
-    return sortData
+    if(columns.length > 0){
+        const sortData = data.filter((item) => {
+            let isInclude = false
+            columns.forEach((column) => {
+                if(item[column.key].toLowerCase().includes(keyword.toLowerCase())){
+                    isInclude = true
+                }
+            })
+            return isInclude
+        })
+        return sortData
+    }
+
+    return data
+
 }
 
 
@@ -53,7 +56,7 @@ export function tableReducer(state: TableContextProviderProps, action: Action) {
             }
         }
         case 'SEARCH_BY_KEYWORD': {
-            const keyword = filterbyKeyword(data, action.payload)
+            const keyword = filterbyKeyword(data, action.payload, state.columns)
             return{
                 ...state,
                 dataFiltered: keyword,

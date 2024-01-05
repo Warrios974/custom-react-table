@@ -27,7 +27,6 @@ export const TableContext = createContext(defaultTableProps);
 
 export const TableContextProvider = (props : TableContextProviderProps) => {
     const [state, dispatch] = useReducer(tableReducer, props)
-    console.log('state', state)
 
     const handleFilterByColumn = (column: string, sort: string ) => {
         dispatch({

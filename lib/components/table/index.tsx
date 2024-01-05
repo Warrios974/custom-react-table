@@ -31,11 +31,13 @@ export function Table(props: TableProps) {
         'numberOfEntries': props.data.length,
         'columns': props.columns,
         'data': props.data,
-        'numberOfPages': Math.ceil(props.data.length / listOfNumbersOfEntries[0] || 10),
+        'numberOfPages': Math.ceil(props.data.length / listOfNumbersOfEntries[0] || 0),
         'numberOfEntriesPerPage': listOfNumbersOfEntries[0],
         'currentPage': 1,
         'dataFiltered': JSON.parse(JSON.stringify(props.data)),
     }
+
+    console.log('initialContextValue', initialContextValue.numberOfPages)
 
     return (
         <TableContextProvider 

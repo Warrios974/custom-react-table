@@ -3,20 +3,31 @@ import { TableContext } from "../../contexts/TableContext"
 import styles from './styles.module.css'
 import chevronSVG from '../../assets/chevron-down.svg'
 import doubleChevronSVG from '../../assets/chevron-double.svg'
-import { TheadProps } from "../../types"
+import { TableLayoutProps, TheadProps } from "../../types"
 
-export default function TableHeaderRow() {
-  const { columns } = useContext(TableContext)
+export default function TableLayout({ children }: TableLayoutProps) {
+
+  const { columns, diplayFooterRow } = useContext(TableContext)
   const [columnClicked, setColumnClicked] = useState<string | null>(null)
 
-  return (
-    <thead className={`${styles.tableHeader}`}>
-      <tr>
-        {columns.map((column, index) => (
-          <Thead key={index} column={column} columnClicked={columnClicked} setColumnClicked={setColumnClicked} />
-        ))}
-      </tr>
-    </thead>
+  return ( 
+    <table className={styles.table}>
+        <thead className={`${styles.tableHeader}`}>
+        <tr>
+            {columns.map((column, index) => (
+            <Thead key={index} column={column} columnClicked={columnClicked} setColumnClicked={setColumnClicked} />
+            ))}
+        </tr>
+        </thead>
+        {children}
+        { diplayFooterRow && <tfoot className={`${styles.tableFooter}`}>
+        <tr>
+            {columns.map((column, index) => (
+            <Thead key={index} column={column} columnClicked={columnClicked} setColumnClicked={setColumnClicked} />
+            ))}
+        </tr>
+        </tfoot>}
+    </table>
   )
 }
 

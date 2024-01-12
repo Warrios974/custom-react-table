@@ -1,11 +1,10 @@
 import { TableProps } from '../../types'
 import { TableHeader } from '../TableHeader';
-import TableHeaderRow from '../TableHeaderRow';
 import TableRow from '../TableRow';
-import TableFooterRow from '../TableFooterRow';
 import TableFooter from '../TableFooter';
 import { TableContextProvider } from '../../contexts/TableContext';
 import styles from './styles.module.css'
+import TableLayout from '../TableLayout/TableLayout';
 
 export function Table(props: TableProps) {
     
@@ -44,11 +43,9 @@ export function Table(props: TableProps) {
             >
             <TableHeader />
             <div className={`${styles.responsiveContainer}`}>
-                <table className={`${styles.table}`}>
-                    <TableHeaderRow />
-                    <TableRow />
-                    <TableFooterRow />
-                </table>
+            <TableLayout>
+                <TableRow />
+            </TableLayout>
             </div>
             <TableFooter />
         </TableContextProvider>

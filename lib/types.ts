@@ -57,6 +57,7 @@ export type TableFooterProps = {
     numberOfEntries: number
 }
 
+export type TableLayoutProps = PropsWithChildren
 export type TableHeaderRowProps = {
     columns: TableColumn[],
     filterByColumn: (column: string) => void

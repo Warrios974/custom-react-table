@@ -43,15 +43,15 @@ export function Table(props: TableProps) {
         <TableContextProvider 
             {...initialContextValue}
             >
-            <div className={``}>
-                <TableHeader />
+            <TableHeader />
+            <div className={`${styles.responsiveContainer}`}>
                 <table className={`${styles.table}`}>
                     <TableHeaderRow />
                     <TableRow />
                     <TableFooterRow />
                 </table>
-                <TableFooter />
             </div>
+            <TableFooter />
         </TableContextProvider>
     )
 }

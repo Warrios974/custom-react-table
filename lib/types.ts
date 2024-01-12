@@ -77,6 +77,8 @@ export type InfosEntriesProps = {
 
 export type TheadProps = {
     column: TableColumn,
+    columnClicked: string | null,
+    setColumnClicked: (column: string) => void,
 }
 
 //context and reducer

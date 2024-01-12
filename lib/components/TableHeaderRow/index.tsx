@@ -6,22 +6,22 @@ import { TheadProps } from "../../types"
 
 export default function TableHeaderRow() {
   const { columns } = useContext(TableContext)
+  const [columnClicked, setColumnClicked] = useState<string | null>(null)
 
   return (
     <thead className={`${styles.tableHeader}`}>
       <tr>
         {columns.map((column, index) => (
-          <Thead key={index} column={column} />
+          <Thead key={index} column={column} columnClicked={columnClicked} setColumnClicked={setColumnClicked} />
         ))}
       </tr>
     </thead>
   )
 }
 
-const Thead = ({column} : TheadProps) => {
+const Thead = ({column, columnClicked, setColumnClicked} : TheadProps) => {
 
   const { handleFilterByColumn, classNamethHeader } = useContext(TableContext)
-  const [columnClicked, setColumnClicked] = useState<string | null>(null)
   const [sortOrder, setSortOrder] = useState<'ASC' | 'DESC' |''>('')
   const handleClick = (columnKey: string) => {
     let newSortOrder = sortOrder
@@ -48,10 +48,10 @@ const Thead = ({column} : TheadProps) => {
       onClick={() => handleClick(column.key)}
       className={`${styles.th} ${classNamethHeader}`}
     >
-      <span>{column.name}</span>
       <span>
-        <img className={`${styles.chevron} ${sortOrder === "ASC" ? styles.down : '' } ${sortOrder === "DESC" ? styles.up : '' } ${sortOrder === "" ? styles.unactive : '' }`} src={chevronSVG} alt=""/>
+        {column.name}
       </span>
+      <img className={`${styles.chevron} ${sortOrder === "ASC" ? styles.down : '' } ${sortOrder === "DESC" ? styles.up : '' } ${sortOrder === "" || columnClicked !== column.key ? styles.unactive : '' }`} src={chevronSVG} alt=""/>
     </th>
   )
 }

@@ -1,6 +1,5 @@
 .td{
     padding: .5rem 0;
-    text-align: center;
 }
 
 .background{
@@ -8,7 +7,7 @@
 }
 
 .tr:hover{
-    background-color: #d2d2d2;
+    background-color: #dedede77;
 }
 
 /* Path: custom-react-table/lib/components/TableHeaderRow/styles.module.css */

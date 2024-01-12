@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { TableContext } from "../../contexts/TableContext"
 import styles from './styles.module.css'
 import chevronSVG from '../../assets/chevron-down.svg'
+import doubleChevronSVG from '../../assets/chevron-double.svg'
 import { TheadProps } from "../../types"
 
 export default function TableHeaderRow() {
@@ -22,7 +23,7 @@ export default function TableHeaderRow() {
 const Thead = ({column, columnClicked, setColumnClicked} : TheadProps) => {
 
   const { handleFilterByColumn, classNamethHeader } = useContext(TableContext)
-  const [sortOrder, setSortOrder] = useState<'ASC' | 'DESC' |''>('')
+  const [sortOrder, setSortOrder] = useState<'ASC' | 'DESC' | ''>('')
   const handleClick = (columnKey: string) => {
     let newSortOrder = sortOrder
 
@@ -51,7 +52,10 @@ const Thead = ({column, columnClicked, setColumnClicked} : TheadProps) => {
       <span>
         {column.name}
       </span>
-      <img className={`${styles.chevron} ${sortOrder === "ASC" ? styles.down : '' } ${sortOrder === "DESC" ? styles.up : '' } ${sortOrder === "" || columnClicked !== column.key ? styles.unactive : '' }`} src={chevronSVG} alt=""/>
+      <span>
+        <img className={`${styles.chevron} ${sortOrder === "ASC" ? styles.down : '' } ${sortOrder === "DESC" ? styles.up : '' } ${sortOrder === "" || columnClicked !== column.key ? styles.hidden : '' }`} src={chevronSVG} alt=""/>
+        <img className={`${styles.chevron} ${styles.doubleChevron} ${sortOrder === "" ? '' : styles.hidden }`} src={doubleChevronSVG} alt=""/>
+      </span>
     </th>
   )
 }

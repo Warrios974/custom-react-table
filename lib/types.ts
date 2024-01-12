@@ -24,10 +24,11 @@ export type TableProps = {
     classNameInput?: string,
     classNamethHeader?: string,
     classNamethFooter?: string,
+    classNametdStriped?: string,
     classNametd?: string,
     classNameBtnNumber?: string,
     classNameBtnNextAndPrevious?: string,
-
+    customMessageNoData?: string,
     displaySearchBar?: boolean,
     diplayEntries?: boolean,
     diplayFooterRow?: boolean,

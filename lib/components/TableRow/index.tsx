@@ -5,7 +5,7 @@ import styles from './style.module.css'
 
 export default function TableRow() {
     
-    const { columns, dataFiltered, numberOfEntriesPerPage, currentPage } = useContext(TableContext)
+    const { columns, dataFiltered, numberOfEntriesPerPage, currentPage, customMessageNoData, classNametd, classNametdStriped } = useContext(TableContext)
 
     const currentDataPage = sliceDataPage(dataFiltered, numberOfEntriesPerPage, currentPage)
 
@@ -15,13 +15,13 @@ export default function TableRow() {
             currentDataPage?.map((data, index) => (
                 <tr
                     key={`${index}`}
-                    className={`${styles.tr} ${index % 2 === 0 && styles.background}`}
+                    className={`${styles.tr} ${index % 2 === 0 ? classNametdStriped : ''}`}
                 >
                 {
                 columns.map((column, index) => (
                     <td 
                         key={`${column.name}-${index}`}
-                        className={`${styles.td}`}
+                        className={`${styles.td} ${classNametd}`}
                     >
                     {column.selector(data)}
                     </td>
@@ -29,6 +29,11 @@ export default function TableRow() {
                 }
                 </tr>
             ))
+        }
+        {
+            currentDataPage?.length === 0 && <tr className={`${styles.tr}`} >
+                <td className={`${styles.td}`} colSpan={columns.length}>{customMessageNoData}</td>
+            </tr>
         }
       </tbody>
     )

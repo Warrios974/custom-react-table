@@ -20,9 +20,10 @@ export function Table(props: TableProps) {
         'classNamethHeader': props.classNamethHeader,
         'classNamethFooter': props.classNamethFooter,
         'classNametd': props.classNametd,
+        'classNametdStriped': props.classNametdStriped,
         'classNameBtnNumber': props.classNameBtnNumber,
         'classNameBtnNextAndPrevious': props.classNameBtnNextAndPrevious,
-        
+        'customMessageNoData': props.customMessageNoData || 'No data found',
         'displaySearchBar': props.displaySearchBar,
         'diplayEntries': props.diplayEntries,
         'diplayFooterRow': props.diplayFooterRow,
@@ -36,8 +37,6 @@ export function Table(props: TableProps) {
         'currentPage': 1,
         'dataFiltered': JSON.parse(JSON.stringify(props.data)),
     }
-
-    console.log('initialContextValue', initialContextValue.numberOfPages)
 
     return (
         <TableContextProvider 

@@ -58,15 +58,6 @@ export type TableFooterProps = {
 }
 
 export type TableLayoutProps = PropsWithChildren
-export type TableHeaderRowProps = {
-    columns: TableColumn[],
-    filterByColumn: (column: string) => void
-}
-
-export type TableFooterRowProps = {
-    columns: TableColumn[],
-    diplayFooterRow?: boolean
-}
 
 export type TableRowProps = {
     data: TableData[]

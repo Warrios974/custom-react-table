@@ -44,11 +44,13 @@ function App() {
               name: 'Street',
               key: 'street',
               selector: row => row.street,
+              sortable: false,
           },
           {
               name: 'City',
               key: 'city',
               selector: row => row.city,
+              sortable: false,
           },
           {
               name: 'State',

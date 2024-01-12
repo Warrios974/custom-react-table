@@ -8,6 +8,9 @@
     font-weight: 500;
     vertical-align: middle;
     white-space: nowrap;
+}
+
+.th.sortable{
     cursor: pointer;
 }
 

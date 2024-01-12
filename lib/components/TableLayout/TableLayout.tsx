@@ -34,8 +34,15 @@ export default function TableLayout({ children }: TableLayoutProps) {
 const Thead = ({column, columnClicked, setColumnClicked} : TheadProps) => {
 
   const { handleFilterByColumn, classNamethHeader } = useContext(TableContext)
+
   const [sortOrder, setSortOrder] = useState<'ASC' | 'DESC' | ''>('')
+
+  const sortable = column.sortable === undefined ? true : column.sortable
+
   const handleClick = (columnKey: string) => {
+
+    if(!sortable) return
+
     let newSortOrder = sortOrder
 
     if (columnClicked === columnKey) {
@@ -58,15 +65,15 @@ const Thead = ({column, columnClicked, setColumnClicked} : TheadProps) => {
   return (
     <th 
       onClick={() => handleClick(column.key)}
-      className={`${styles.th} ${classNamethHeader}`}
+      className={`${styles.th} ${classNamethHeader} ${sortable ? styles.sortable : ''}`}
     >
       <span>
         {column.name}
       </span>
-      <span>
+      {sortable && <span>
         <img className={`${styles.chevron} ${sortOrder === "ASC" ? styles.down : '' } ${sortOrder === "DESC" ? styles.up : '' } ${sortOrder === "" || columnClicked !== column.key ? styles.hidden : '' }`} src={chevronSVG} alt=""/>
         <img className={`${styles.chevron} ${styles.doubleChevron} ${sortOrder === "" ? '' : styles.hidden }`} src={doubleChevronSVG} alt=""/>
-      </span>
+      </span>}
     </th>
   )
 }

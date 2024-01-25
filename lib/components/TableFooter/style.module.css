@@ -1,12 +1,12 @@
 .footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    row-gap: 1rem;
-    flex-wrap: wrap;
-    padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
 }
 
-.hidden{
-    visibility: hidden;
+.hidden {
+  visibility: hidden;
 }

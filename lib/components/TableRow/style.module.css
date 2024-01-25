@@ -1,13 +1,13 @@
-.td{
-    padding: .5rem 0;
+.td {
+  padding: 0.5rem 0;
 }
 
-.background{
-    background-color: #f6f6f6;
+.background {
+  background-color: #f6f6f6;
 }
 
-.tr:hover{
-    background-color: #dedede77;
+.tr:hover {
+  background-color: #dedede77;
 }
 
 /* Path: custom-react-table/lib/components/TableHeaderRow/styles.module.css */

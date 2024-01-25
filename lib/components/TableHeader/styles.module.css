@@ -1,12 +1,12 @@
-.header{
-    width: 100%;
-    padding: 1rem 0;
+.header {
+  width: 100%;
+  padding: 1rem 0;
 }
 
-.filters{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 1rem;
+.filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 1rem;
 }

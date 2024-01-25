@@ -41,7 +41,7 @@
   color: #888;
 }
 
-.btnNumber{
+.btnNumber {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -58,37 +58,37 @@
   white-space: nowrap;
 }
 
-.btnNumber:hover{
+.btnNumber:hover {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.btnNumber:active{
+.btnNumber:active {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.btnNumber:focus{
+.btnNumber:focus {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.btnNumber:visited{
+.btnNumber:visited {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.btnNumber:disabled{
+.btnNumber:disabled {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.btnNextAndPrevious{
+.btnNextAndPrevious {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -105,37 +105,37 @@
   white-space: nowrap;
 }
 
-.btnNextAndPrevious:hover{
+.btnNextAndPrevious:hover {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.btnNextAndPrevious:active{
+.btnNextAndPrevious:active {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.btnNextAndPrevious:focus{
+.btnNextAndPrevious:focus {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.btnNextAndPrevious:visited{
+.btnNextAndPrevious:visited {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.btnNextAndPrevious:disabled{
+.btnNextAndPrevious:disabled {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.input{
+.input {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -152,19 +152,19 @@
   white-space: nowrap;
 }
 
-.input:hover{
+.input:hover {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.input:active{
+.input:active {
   background-color: #eee;
   border-color: #ddd;
   color: #333;
 }
 
-.tableTh{
+.tableTh {
   background-color: #faad81;
   color: #333;
   cursor: pointer;

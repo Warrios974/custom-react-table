@@ -1,8 +1,8 @@
-.cursor{
-    cursor: pointer;
+.cursor {
+  cursor: pointer;
 }
 
-.suspension{
-    pointer-events: none;
-    margin: 0 .5rem;
+.suspension {
+  pointer-events: none;
+  margin: 0 0.5rem;
 }

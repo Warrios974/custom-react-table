@@ -1,3 +1,7 @@
+/**
+ * Represents a table footer component.
+ * @returns A table footer component.
+ */
 import InfosEntries from "../InfosEntries";
 import Pagination from "../Pagination";
 import styles from "./style.module.css";

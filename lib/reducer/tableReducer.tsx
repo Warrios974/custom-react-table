@@ -1,3 +1,8 @@
+/**
+ * @file tableReducer.tsx
+ * @description This file defines the reducer for the table component.
+ * @date 29/07/2021
+ */
 import {
   Action,
   TableColumn,
@@ -5,6 +10,14 @@ import {
   TableData,
 } from "../types";
 
+/**
+ * Sort the data by column.
+ * This function is used to sort the data by column.
+ * @param {TableData[]} data
+ * @param {string} column
+ * @param {string} sort
+ * @return {TableData[]} The sorted data.
+ */
 const sortDataColumns = (data: TableData[], column: string, sort: string) => {
   if (sort === "") return data;
 
@@ -21,6 +34,14 @@ const sortDataColumns = (data: TableData[], column: string, sort: string) => {
   return sort === "ASC" ? sortData : sortData.reverse();
 };
 
+/**
+ * Filter the data by keyword.
+ * This function is used to filter the data by keyword.
+ * @param {TableData[]} data
+ * @param {string} keyword
+ * @param {TableColumn[]} columns
+ * @return {TableData[]} The filtered data.
+ */
 const filterByKeyword = (
   data: TableData[],
   keyword: string,
@@ -44,6 +65,14 @@ const filterByKeyword = (
   return data;
 };
 
+/**
+ * Slice the data by page.
+ * This function is used to slice the data by page.
+ * @param {TableData[]} data
+ * @param {number} numberOfEntriesPerPage
+ * @param {number} currentPage
+ * @return {TableData[]} The sliced data.
+ */
 export const sliceDataPage = (
   data: TableData[],
   numberOfEntriesPerPage: number,
@@ -55,6 +84,17 @@ export const sliceDataPage = (
   );
 };
 
+/**
+ * Represents the table reducer.
+ * This function is used to handle the actions.
+ * FILTER_BY_COLUMN | Filter the data by column.
+ * SEARCH_BY_KEYWORD | Filter the data by keyword.
+ * CHANGE_NUMBER_OF_ENTRIES | Change the number of entries to display.
+ * CHANGE_PAGE_OF_ENTRIES | Change the page to display.
+ * @param {TableContextProviderProps} state
+ * @param {Action} action
+ * @return {TableContextProviderProps} The new state.
+ */
 export function tableReducer(state: TableContextProviderProps, action: Action) {
   const data = JSON.parse(JSON.stringify(state.data));
 

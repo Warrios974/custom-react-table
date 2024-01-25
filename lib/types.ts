@@ -1,13 +1,34 @@
+/**
+ * @file types.ts
+ * @description Types for custom-react-table
+ * @license MIT
+ * @version 0.0.6
+ * @since 0.0.1
+ */
 import { PropsWithChildren } from "react";
 
 export type Primitive = string | number | boolean;
 export type Selector = (row: TableData, rowIndex?: number) => Primitive;
 
+/**
+ * Data types
+ * @typedef {Object} TableData
+ * @property {string} id - The id of the row
+ * @property {string} [key] - The key of the row
+ */
 export type TableData = {
   id: string;
   [key: string]: string;
 };
 
+/**
+ * Column types
+ * @typedef {Object} TableColumn
+ * @property {string} name - The name of the column
+ * @property {string} key - The key of the column
+ * @property {Selector} selector - The selector of the column
+ * @property {boolean} sortable - The selector of the column
+ */
 export type TableColumn = {
   name: string;
   key: string;
@@ -15,6 +36,9 @@ export type TableColumn = {
   sortable?: boolean;
 };
 
+/**
+ * Component types
+ */
 export type TableProps = {
   title?: string;
   className?: string;
@@ -35,7 +59,6 @@ export type TableProps = {
   displayInfoEntries?: boolean;
   listOfNumbersOfEntries?: number[];
   numberOfEntries?: number;
-
   columns: TableColumn[];
   data: TableData[];
   currentPageData?: TableData[];
@@ -74,7 +97,9 @@ export type TheadProps = {
   setColumnClicked: (column: string) => void;
 };
 
-//context and reducer
+/**
+ * Reducer types
+ */
 export type ActionString =
   | "FILTER_BY_COLUMN"
   | "SEARCH_BY_KEYWORD"
@@ -107,6 +132,9 @@ export type Action =
   | CHANGE_NUMBER_OF_ENTRIES_ACTION
   | CHANGE_PAGE_OF_ENTRIES_ACTION;
 
+/**
+ * Context types
+ */
 export type TableContextType = TableProps & {
   numberOfEntriesPerPage: number;
   currentPage: number;
@@ -119,9 +147,3 @@ export type TableContextType = TableProps & {
 };
 
 export type TableContextProviderProps = TableContextType & PropsWithChildren;
-
-export type Pagination = {
-  data: TableData[];
-  numberPerPage: number;
-  currentPage: number;
-};

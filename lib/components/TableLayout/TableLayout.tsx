@@ -1,3 +1,8 @@
+/**
+ * Represents a table layout component.
+ * @param children - The children of the component (tbody).
+ * @returns A table layout component.
+ */
 import { useContext, useState } from "react";
 import doubleChevronSVG from "../../assets/chevron-double.svg";
 import chevronSVG from "../../assets/chevron-down.svg";
@@ -42,6 +47,14 @@ export default function TableLayout({ children }: TableLayoutProps) {
   );
 }
 
+/**
+ * Represents a table header component.
+ * @param column - The column to display.
+ * @param columnClicked - The column clicked.
+ * @param setColumnClicked - The function to set the column clicked.
+ * @typedef TheadProps
+ * @returns A table header component.
+ */
 const Thead = ({ column, columnClicked, setColumnClicked }: TheadProps) => {
   const { handleFilterByColumn, classNameThHeader } = useContext(TableContext);
 
@@ -49,6 +62,15 @@ const Thead = ({ column, columnClicked, setColumnClicked }: TheadProps) => {
 
   const sortable = column.sortable === undefined ? true : column.sortable;
 
+  /**
+   * Handles the click on the column header.
+   * If the column is sortable, it will sort the data by the column clicked.
+   * If the column is not sortable, it will do nothing.
+   * If the column is already sorted, it will change the sort order.
+   * If the column is not sorted, it will sort the data in ascending order.
+   * @param columnKey
+   * @returns
+   */
   const handleClick = (columnKey: string) => {
     if (!sortable) return;
 

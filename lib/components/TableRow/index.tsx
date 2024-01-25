@@ -1,3 +1,7 @@
+/**
+ * Represents the table body component
+ * @returns The table body component
+ */
 import { useContext } from "react";
 import { TableContext } from "../../contexts/TableContext";
 import { sliceDataPage } from "../../reducer/tableReducer";

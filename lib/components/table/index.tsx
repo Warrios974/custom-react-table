@@ -1,3 +1,9 @@
+/**
+ * Represents a table component.
+ * @param props - The props of the component.
+ * @typedef TableProps
+ * @returns A Table component.
+ */
 import { TableContextProvider } from "../../contexts/TableContext";
 import { TableProps } from "../../types";
 import TableFooter from "../TableFooter";

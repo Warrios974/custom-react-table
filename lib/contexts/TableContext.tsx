@@ -1,3 +1,8 @@
+/**
+ * @file TableContext.tsx
+ * @description This file defines the context for the table component.
+ * @date 29/07/2021
+ */
 import { createContext, useEffect, useReducer } from "react";
 import { tableReducer } from "../reducer/tableReducer";
 import { TableContextProviderProps, TableContextType } from "../types";
@@ -25,9 +30,19 @@ const defaultTableProps: TableContextType = {
 
 export const TableContext = createContext(defaultTableProps);
 
-export const TableContextProvider = (props: TableContextProviderProps) => {
+/**
+ * Represents the table context provider component.
+ * @param {TableContextProviderProps} props
+ * @return Context provider component.
+ */
+const TableContextProvider = (props: TableContextProviderProps) => {
   const [state, dispatch] = useReducer(tableReducer, props);
 
+  /**
+   * Handle the filter by column action.
+   * @param column | The column to filter.
+   * @param sort | The sort to apply.
+   */
   const handleFilterByColumn = (column: string, sort: string) => {
     dispatch({
       type: "FILTER_BY_COLUMN",
@@ -35,6 +50,10 @@ export const TableContextProvider = (props: TableContextProviderProps) => {
     });
   };
 
+  /**
+   * Handle the search by keyword action.
+   * @param payload | The keyword to search for.
+   */
   const handleSearchByKeyword = (payload: string) => {
     dispatch({
       type: "SEARCH_BY_KEYWORD",
@@ -42,6 +61,10 @@ export const TableContextProvider = (props: TableContextProviderProps) => {
     });
   };
 
+  /**
+   * Handle the change number of entries action.
+   * @param payload | The number of entries to display.
+   */
   const handleChangeNumberEntries = (payload: number) => {
     dispatch({
       type: "CHANGE_NUMBER_OF_ENTRIES",
@@ -49,6 +72,10 @@ export const TableContextProvider = (props: TableContextProviderProps) => {
     });
   };
 
+  /**
+   * Handle the change page of entries action.
+   * @param payload | The page to display.
+   */
   const handleChangePageEntries = (payload: number) => {
     dispatch({
       type: "CHANGE_PAGE_OF_ENTRIES",

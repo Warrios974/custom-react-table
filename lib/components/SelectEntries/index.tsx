@@ -20,7 +20,7 @@ export function SelectEntries() {
 
   return (
     <form className={styles.form}>
-      <label htmlFor="selectEntries">
+      <label htmlFor="selectEntries" className={styles.label}>
         Show
         <select
           name="select"

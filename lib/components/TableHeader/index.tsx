@@ -16,7 +16,7 @@ export function TableHeader() {
       <h2>{data.title}</h2>
 
       <div className={`${styles.filters}`}>
-        {data.diplayEntries && <SelectEntries />}
+        {data.displayEntries && <SelectEntries />}
         {data.displaySearchBar && <SearchForm />}
       </div>
     </div>

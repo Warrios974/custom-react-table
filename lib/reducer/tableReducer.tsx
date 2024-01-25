@@ -21,7 +21,7 @@ const sortDataColumns = (data: TableData[], column: string, sort: string) => {
   return sort === "ASC" ? sortData : sortData.reverse();
 };
 
-const filterbyKeyword = (
+const filterByKeyword = (
   data: TableData[],
   keyword: string,
   columns: TableColumn[]
@@ -70,7 +70,7 @@ export function tableReducer(state: TableContextProviderProps, action: Action) {
       };
     }
     case "SEARCH_BY_KEYWORD": {
-      const keyword = filterbyKeyword(data, action.payload, state.columns);
+      const keyword = filterByKeyword(data, action.payload, state.columns);
       return {
         ...state,
         dataFiltered: keyword,

@@ -5,14 +5,14 @@ function App() {
   return (
     <Table
       displaySearchBar={true}
-      diplayEntries={true}
+      displayEntries={true}
       displayInfoEntries={true}
-      diplayFooterRow={false}
+      displayFooterRow={false}
       listOfNumbersOfEntries={[2, 10, 25, 50]}
       classNameBtnNextAndPrevious="btnNextAndPrevious"
       classNameBtnNumber="btnNumber"
       classNameInput="input"
-      classNamethHeader="tableTh"
+      classNameThHeader="tableTh"
       columns={[
         {
           name: "First Name",

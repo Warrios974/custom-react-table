@@ -10,8 +10,8 @@ export default function TableRow() {
     numberOfEntriesPerPage,
     currentPage,
     customMessageNoData,
-    classNametd,
-    classNametdStriped,
+    classNameTd,
+    classNameTdStriped,
   } = useContext(TableContext);
 
   const currentDataPage = sliceDataPage(
@@ -26,13 +26,13 @@ export default function TableRow() {
         <tr
           key={`${index}`}
           className={`${styles.tr} ${
-            index % 2 === 0 ? classNametdStriped : ""
+            index % 2 === 0 ? classNameTdStriped : ""
           }`}
         >
           {columns.map((column, index) => (
             <td
               key={`${column.name}-${index}`}
-              className={`${styles.td} ${classNametd}`}
+              className={`${styles.td} ${classNameTd}`}
             >
               {column.selector(data)}
             </td>

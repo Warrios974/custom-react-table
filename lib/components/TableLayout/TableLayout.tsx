@@ -6,7 +6,7 @@ import { TableLayoutProps, TheadProps } from "../../types";
 import styles from "./styles.module.css";
 
 export default function TableLayout({ children }: TableLayoutProps) {
-  const { columns, diplayFooterRow } = useContext(TableContext);
+  const { columns, displayFooterRow } = useContext(TableContext);
   const [columnClicked, setColumnClicked] = useState<string | null>(null);
 
   return (
@@ -24,7 +24,7 @@ export default function TableLayout({ children }: TableLayoutProps) {
         </tr>
       </thead>
       {children}
-      {diplayFooterRow && (
+      {displayFooterRow && (
         <tfoot className={`${styles.tableFooter}`}>
           <tr>
             {columns.map((column, index) => (
@@ -43,7 +43,7 @@ export default function TableLayout({ children }: TableLayoutProps) {
 }
 
 const Thead = ({ column, columnClicked, setColumnClicked }: TheadProps) => {
-  const { handleFilterByColumn, classNamethHeader } = useContext(TableContext);
+  const { handleFilterByColumn, classNameThHeader } = useContext(TableContext);
 
   const [sortOrder, setSortOrder] = useState<"ASC" | "DESC" | "">("");
 
@@ -74,7 +74,7 @@ const Thead = ({ column, columnClicked, setColumnClicked }: TheadProps) => {
   return (
     <th
       onClick={() => handleClick(column.key)}
-      className={`${styles.th} ${classNamethHeader} ${
+      className={`${styles.th} ${classNameThHeader} ${
         sortable ? styles.sortable : ""
       }`}
     >

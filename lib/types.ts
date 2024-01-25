@@ -22,16 +22,16 @@ export type TableProps = {
   classNameHeader?: string;
   classNameRow?: string;
   classNameInput?: string;
-  classNamethHeader?: string;
-  classNamethFooter?: string;
-  classNametdStriped?: string;
-  classNametd?: string;
+  classNameThHeader?: string;
+  classNameThFooter?: string;
+  classNameTdStriped?: string;
+  classNameTd?: string;
   classNameBtnNumber?: string;
   classNameBtnNextAndPrevious?: string;
   customMessageNoData?: string;
   displaySearchBar?: boolean;
-  diplayEntries?: boolean;
-  diplayFooterRow?: boolean;
+  displayEntries?: boolean;
+  displayFooterRow?: boolean;
   displayInfoEntries?: boolean;
   listOfNumbersOfEntries?: number[];
   numberOfEntries?: number;
@@ -46,7 +46,7 @@ export type TableHeaderProps = {
   className?: string;
   classNameInput?: string;
   displaySearchBar?: boolean;
-  diplayEntries?: boolean;
+  displayEntries?: boolean;
   listOfNumbersOfEntries?: number[];
 };
 

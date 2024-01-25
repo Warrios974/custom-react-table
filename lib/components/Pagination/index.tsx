@@ -18,7 +18,7 @@ export default function Pagination() {
   const generatePageNumbers = () => {
     const pages: (number | string)[] = [];
 
-    const maxPages = Math.min(5, numberOfPages); // Adapter maxPages en fonction de numberOfPages
+    const maxPages = Math.min(5, numberOfPages); // Adapter maxPages en function de numberOfPages
 
     if (numberOfPages <= maxPages) {
       for (let i = 1; i <= numberOfPages; i++) {

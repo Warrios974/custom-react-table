@@ -35,7 +35,7 @@ export const TableContext = createContext(defaultTableProps);
  * @param {TableContextProviderProps} props
  * @return Context provider component.
  */
-const TableContextProvider = (props: TableContextProviderProps) => {
+export const TableContextProvider = (props: TableContextProviderProps) => {
   const [state, dispatch] = useReducer(tableReducer, props);
 
   /**

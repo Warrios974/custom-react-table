@@ -61,7 +61,6 @@ export type TableProps = {
   numberOfEntries?: number;
   columns: TableColumn[];
   data: TableData[];
-  currentPageData?: TableData[];
 };
 
 export type TableHeaderProps = {
@@ -140,6 +139,7 @@ export type TableContextType = TableProps & {
   currentPage: number;
   dataFiltered: TableData[];
   numberOfPages: number;
+  currentPageData?: TableData[];
   handleFilterByColumn?: (column: string, sort: string) => void;
   handleSearchByKeyword?: (keyword: string) => void;
   handleChangeNumberEntries?: (number: number) => void;

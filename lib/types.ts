@@ -2,7 +2,7 @@
  * @file types.ts
  * @description Types for custom-react-table
  * @license MIT
- * @version 0.0.6
+ * @version 0.0.7
  * @since 0.0.1
  */
 import { PropsWithChildren } from "react";

@@ -56,17 +56,14 @@ export default function Pagination() {
       </button>
 
       {generatePageNumbers().map((item, key) => (
-        <>
-          {item === "..." && <span className={styles.suspension} key={key}>...</span>}
-          {item !== "..." && <button
+          item !== "..." ? <button
             key={key}
             disabled={item === currentPage}
             onClick={() => handleChangePage(item as number)}
             className={`${styles.cursor} ${classNameBtnNumber}`}
           >
             {item}
-          </button>}
-        </>
+          </button> : <span className={styles.suspension} key={key}>...</span>
       ))}
 
       <button

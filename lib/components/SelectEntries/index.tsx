@@ -14,11 +14,9 @@ export function SelectEntries() {
     <form className={styles.form}>
         <label htmlFor="selectEntries">
             Show 
-        </label>
-        <select name="select" id="selectEntries" onChange={(e) => handleChange(Number(e.target.value))} className={`${classNameInput}`}>
-            {listOfNumbersOfEntries?.map((item) => <option key={`${item}`} value={item}>{item}</option>)}
-        </select>
-        <label htmlFor="selectEntries">
+            <select name="select" id="selectEntries" onChange={(e) => handleChange(Number(e.target.value))} className={`${classNameInput}`}>
+                {listOfNumbersOfEntries?.map((item) => <option key={`${item}`} value={item}>{item}</option>)}
+            </select>
              entries
         </label>
     </form>

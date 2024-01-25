@@ -125,9 +125,37 @@ Pour utiliser Custom React Table dans votre projet, suivez les étapes suivantes
 
 La structure des données (data) et des colonnes (columns) est essentielle lors de l'utilisation de la bibliothèque Custom React Table.
 
-La structure des données (data) représente les informations que vous souhaitez afficher dans votre table. Chaque objet dans le tableau `data` représente une ligne de la table et contient les différentes propriétés correspondant aux colonnes de la table. Par exemple, dans l'extrait de code fourni, chaque objet dans le tableau `data` représente une personne avec des propriétés telles que `id`, `firstName`, `lastName`, etc.
+## Les données
 
-La structure des colonnes (columns) définit les différentes colonnes de la table. Chaque objet dans le tableau `columns` représente une colonne et contient des propriétés telles que le nom de la colonne (`name`), la clé (`key`) utilisée pour identifier la colonne, et une fonction de sélection (`selector`) qui extrait la valeur de la colonne à partir de l'objet de données correspondant. Dans l'extrait de code fourni, les colonnes sont définies avec les noms "First name" et "Last name", et les fonctions de sélection extraient les valeurs des propriétés `firstName` et `lastName` respectivement.
+La structure des données (`data`) et des colonnes (`columns`) est essentielle lors de l'utilisation de la bibliothèque Custom React Table. Voici un exemple de comment vous pourriez structurer vos données et vos colonnes :
+
+```jsx
+const data = [
+  { id: 1, firstName: "John", lastName: "Doe" },
+  { id: 2, firstName: "Jane", lastName: "Doe" },
+  // ...
+];
+
+const columns = [
+  { name: "First name", key: "firstName", selector: (row) => row.firstName },
+  { name: "Last name", key: "lastName", selector: (row) => row.lastName },
+  // ...
+];
+
+// ...
+
+return (
+  <Table
+    data={data}
+    columns={columns}
+    // ...
+  />
+);
+```
+
+Dans cet exemple, chaque objet dans le tableau data représente une ligne de la table et contient les différentes propriétés correspondant aux colonnes de la table.
+
+Chaque objet dans le tableau columns représente une colonne et contient des propriétés telles que le nom de la colonne (`name`), la clé (`key`) utilisée pour identifier la colonne, et une fonction de sélection (`selector`) qui extrait la valeur de la colonne à partir de l'objet de données correspondant.
 
 La structure correcte des données et des colonnes est importante car elle permet à la bibliothèque Custom React Table de fonctionner correctement en affichant les données dans les colonnes appropriées de la table. Assurez-vous de fournir les données et les colonnes dans le bon format pour obtenir les résultats souhaités lors de l'utilisation de cette bibliothèque.
 
@@ -150,7 +178,14 @@ Vous pouvez personnaliser le style de la table en passant des props de className
 Par exemple, pour appliquer une classe CSS au boutons numéro de la pagination, vous pouvez faire comme suit :
 
 ```jsx
-<Table data={data} columns={columns} classNameBtnNumber="my-custom-button" />
+return (
+  <Table
+    data={data}
+    columns={columns}
+    classNameBtnNumber="my-custom-button"
+    // ...
+  />
+);
 ```
 
 # API Reference

@@ -1,5 +1,14 @@
 {
   "name": "@tyulan/custom-react-table",
+  "description": "A React table component with sorting, pagination, filtering.",
+  "keywords": [
+    "react",
+    "table",
+    "sorting",
+    "pagination",
+    "filtering"
+  ],
+  "author": "tyulan",
   "private": false,
   "version": "0.0.8",
   "type": "module",

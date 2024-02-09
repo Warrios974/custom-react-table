@@ -45,7 +45,10 @@ export default function TableRow() {
       ))}
       {currentDataPage?.length === 0 && (
         <tr className={`${styles.tr}`}>
-          <td className={`${styles.td}`} colSpan={columns.length}>
+          <td
+            className={`${styles.td} ${classNameTd}`}
+            colSpan={columns.length}
+          >
             {customMessageNoData}
           </td>
         </tr>
